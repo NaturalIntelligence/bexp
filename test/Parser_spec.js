@@ -11,6 +11,8 @@ describe("Should parse infix notation", function () {
                 { input: "a", expected: false },
                 { input: "b", expected: false },
                 { input: ["a", "b"], expected: true },
+                { input: "", expected: false },
+                { input: [ "" ], expected: false },
             ]
         },
         {
@@ -19,6 +21,11 @@ describe("Should parse infix notation", function () {
                 { input: "a", expected: true },
                 { input: "b", expected: true },
                 { input: ["a", "b"], expected: true },
+                { input: ["a", ""], expected: true },
+                { input: ["", "b"], expected: true },
+                { input: ["", ""], expected: false },
+                { input: [""], expected: false },
+                { input: "", expected: false },
             ]
         },
         {
