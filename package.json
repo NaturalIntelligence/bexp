@@ -1,0 +1,33 @@
+{
+  "name": "bexp",
+  "version": "1.0.0",
+  "description": "Boolean, Logical, And OR NOT Expression Parser",
+  "main": "src/Parser.js",
+  "scripts": {
+    "test": "jasmine test/*_spec.js"
+  },
+  "keywords": [
+    "boolean",
+    "logical",
+    "and",
+    "or",
+    "not",
+    "infix",
+    "postfix",
+    "notation",
+    "cucumber",
+    "tag",
+    "expression",
+    "rpn",
+    "search"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NaturalIntelligence/bexp"
+  },
+  "author": "Amit Gupta (https://amitkumargupta.work/)",
+  "license": "MIT",
+  "dependencies": {
+    "jasmine": "^3.5.0"
+  }
+}
