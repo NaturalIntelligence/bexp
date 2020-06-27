@@ -1,6 +1,6 @@
 {
   "name": "bexp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Boolean, Logical, And OR NOT Expression Parser",
   "main": "src/Parser.js",
   "scripts": {

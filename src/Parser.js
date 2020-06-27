@@ -11,11 +11,11 @@ class Parser{
      * @param {string} exp Infix notation or boolean expression
      */
     constructor(exp, options){
-        this.options = Object.assign({}, options);
+        this.options = Object.assign({ onEmpty: true}, options);
         this._originalExp = exp;
 
-        if(typeof exp !== "undefined"){
-            if(exp.trim() === "" && options.onEmpty) this.test = function(){ return options.onEmpty;}
+        if(typeof exp !== "undefined" ){
+            if(exp.trim() === "" && this.options.onEmpty) this.test = function(){ return this.options.onEmpty;}
             else{
                 this._replaceOperators(exp, options);
             }

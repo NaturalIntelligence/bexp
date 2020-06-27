@@ -61,6 +61,14 @@ describe("Should parse infix notation", function () {
                 { input: ["a", "b"], expected: false },
             ]
         },
+        {
+            exp: [ ""],
+            tests: [
+                { input: "a", expected: true },
+                { input: "b", expected: true },
+                { input: ["a", "b"], expected: true },
+            ]
+        },
         /* {
             exp: [ "word with space or without"],
             tests: [
