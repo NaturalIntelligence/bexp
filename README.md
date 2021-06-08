@@ -9,9 +9,9 @@ $ npm install bexp
 ```js
 const BexpParser = require("bexp");
 
-bexpParser = new BexpParser("a and b or c but !d");
-BexpParser.test("a")
-BexpParser.test(["a","b"])
+const bexpParser = new BexpParser("a and b or c but !d");
+bexpParser.test("a")
+bexpParser.test(["a","b"])
 ```
 
 Supported expressions example
@@ -34,8 +34,8 @@ Note:
 ```js
 const BexpParser = require("bexp");
 
-bexpParser = new BexpParser();
-BexpParser.evaluate("True and false or true but !N")
+const bexpParser = new BexpParser();
+bexpParser.evaluate("True and false or true but !N")
 ```
 
 Supported expressions example
