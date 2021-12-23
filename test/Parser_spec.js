@@ -62,6 +62,17 @@ describe("Should parse infix notation", function () {
             ]
         },
         {
+            exp: [ "a-b !c"],
+            opt: {allowMathOperators: false},
+            tests: [
+                { input: "a", expected: false},
+                { input: "b", expected: false},
+                { input: "c", expected: false},
+                { input: ["a-b"], expected: true},
+                { input: ["a-b", "c"], expected: false},
+            ]
+        },
+        {
             exp: [ ""],
             tests: [
                 { input: "a", expected: true },
@@ -85,7 +96,7 @@ describe("Should parse infix notation", function () {
             if(runFocusedOnly && data.focus) return;
 
             it(exp, function () {
-                const parser = new Parser(exp);
+                const parser = new Parser(exp, data.opt);
                
                 data.tests.forEach(function (test){
                     expect(parser.test(test.input)).toBe( test.expected);

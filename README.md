@@ -8,8 +8,8 @@ $ npm install bexp
 
 ```js
 const BexpParser = require("bexp");
-
-const bexpParser = new BexpParser("a and b or c but !d");
+const options = { allowMathOperators : true};
+const bexpParser = new BexpParser("a and b or c but !d", options);
 bexpParser.test("a")
 bexpParser.test(["a","b"])
 ```

@@ -11,13 +11,13 @@ class Parser{
      * @param {string} exp Infix notation or boolean expression
      */
     constructor(exp, options){
-        this.options = Object.assign({ onEmpty: true}, options);
+        this.options = Object.assign({ onEmpty: true, allowMathOperators: true}, options);
         this._originalExp = exp;
 
         if(typeof exp !== "undefined" ){
             if(exp.trim() === "" && this.options.onEmpty) this.test = function(){ return this.options.onEmpty;}
             else{
-                this._replaceOperators(exp, options);
+                this._replaceOperators(exp);
             }
         }
         
@@ -97,8 +97,10 @@ class Parser{
         exp = exp.replace("(", " ( ");
         exp = exp.replace(")", " ) ");
         exp = exp.replace("!", " ! ");
-        exp = exp.replace("+", " + ");
-        exp = exp.replace("-", " ! ");
+        if(this.options.allowMathOperators){
+            exp = exp.replace("+", " + ");
+            exp = exp.replace("-", " ! ");
+        }
 
         exp = exp.trim();
         this.tokens = exp.split(/[ \t]+/g);
